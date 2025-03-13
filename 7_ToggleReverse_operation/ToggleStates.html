@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle States</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; text-align: center; }
+        .status { margin-top: 20px; font-size: 1.2em; font-weight: bold; }
+        button { padding: 10px 20px; margin: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Toggle States: On/Off, Enable/Disable, Active/Inactive, Yes/No</h2>
+    
+    <div>
+        <button id="onOffBtn">Turn On</button>
+        <p class="status" id="onOffStatus">Status: Off</p>
+    </div>
+    
+    <div>
+        <button id="enableDisableBtn">Enable</button>
+        <p class="status" id="enableDisableStatus">Status: Disabled</p>
+    </div>
+    
+    <div>
+        <button id="activeInactiveBtn">Set Active</button>
+        <p class="status" id="activeInactiveStatus">Status: Inactive</p>
+    </div>
+    
+    <div>
+        <button id="yesNoBtn">Yes</button>
+        <p class="status" id="yesNoStatus">Status: No</p>
+    </div>
+    
+    <script>
+        document.getElementById('onOffBtn').addEventListener('click', function() {
+            let status = document.getElementById('onOffStatus');
+            if (status.textContent.includes('Off')) {
+                status.textContent = 'Status: On';
+                this.textContent = 'Turn Off';
+            } else {
+                status.textContent = 'Status: Off';
+                this.textContent = 'Turn On';
+            }
+        });
+        
+        document.getElementById('enableDisableBtn').addEventListener('click', function() {
+            let status = document.getElementById('enableDisableStatus');
+            if (status.textContent.includes('Disabled')) {
+                status.textContent = 'Status: Enabled';
+                this.textContent = 'Disable';
+            } else {
+                status.textContent = 'Status: Disabled';
+                this.textContent = 'Enable';
+            }
+        });
+        
+        document.getElementById('activeInactiveBtn').addEventListener('click', function() {
+            let status = document.getElementById('activeInactiveStatus');
+            if (status.textContent.includes('Inactive')) {
+                status.textContent = 'Status: Active';
+                this.textContent = 'Set Inactive';
+            } else {
+                status.textContent = 'Status: Inactive';
+                this.textContent = 'Set Active';
+            }
+        });
+        
+        document.getElementById('yesNoBtn').addEventListener('click', function() {
+            let status = document.getElementById('yesNoStatus');
+            if (status.textContent.includes('No')) {
+                status.textContent = 'Status: Yes';
+                this.textContent = 'No';
+            } else {
+                status.textContent = 'Status: No';
+                this.textContent = 'Yes';
+            }
+        });
+    </script>
+</body>
+</html>
